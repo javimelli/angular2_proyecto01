@@ -1,3 +1,12 @@
 <h1>
   {{title}}
 </h1>
+<!-- Para que el valor de un atributo de un elemento HTML coja un
+	 atributo de la clase del componente el elemento HTML se pone
+	 entre []  -->
+<img [src]="imgUrl">
+<input type="text" [(ngModel)]="name">	
+<p> Hello {{name}}</p>
+<button (click)="setName('Jonh')">
+	Hello John
+</button>
