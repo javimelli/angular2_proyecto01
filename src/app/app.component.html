@@ -5,9 +5,49 @@
 <!-- Para que el valor de un atributo de un elemento HTML coja un
 	 atributo de la clase del componente el elemento HTML se pone
 	 entre []  -->
-<img [src]="imgUrl">
 <input type="text" [(ngModel)]="name">	
 <p> Hello {{name}}</p>
 <button (click)="setName('Jonh')">
 	Hello John
+</button>
+<!-- También se pueden poner expresiones como num > 3
+	En angular 1, el elemento se ocultaba, pero en angular2 desaparece del DOM -->
+<p *ngIf="booleano">Este texto aparece si booleano es true</p>
+<button (click)="cambiarBooleano()">
+	Cambiar valor ngIf
+</button>
+<div *ngFor="let elem of paises">{{elem.desc}}</div>
+<!-- Las directivas modifican a los elementos en los que se incluyen.
+	 Existen muchas directivas predefinidas y podemos programar las nuestras propias.
+	 Las directivas estructurales empiezan por * y modifican el DOM del documento (*ngIf, *ngFor, *ngSwitch).
+	 El * es azúcar sintáctico para la definición del template.
+	 No se pueden incluir dos directivas estructurales (de tipo *) en el mismo elemento, para ello
+	 se utiliza la versión sin el * y el elemento template que no aparece en el DOM-->
+<template ngFor let-elem [ngForOf]="paises">
+	<li *ngIf="elem.check">{{elem.desc}}</li>
+</template>
+
+<!-- Todo atributo de un elemento html entre [], su valor va a ser el valor del atributo de angular -->
+<p [class]="nombreClase">Esta clase es el valor del atributo angular</p>
+<!-- Hay otra funcinalidad, podemos activar o desactivar una clase de la siguiente forma -->
+<p [class.red]="redActive" [class.yellow]="yellowActive">Esta clase es el valor del atributo angular</p>
+<button (click)="cambiarClase()">
+	cambiar de clase
+</button>
+<!-- La otra opción es con un mapa 
+	 pclases = {
+	"red": false,
+	"yellow": true
+	};
+-->
+<p [ngClass]="pclases">Esta clase es el valor del atributo angular</p>
+<button (click)="cambiarMapaClases()">
+	cambiar valores mapa
+</button>
+<!-- Para cambiar el estilo de un elemento solo es de la siguiente forma -->
+<img [src]="imgUrl" [style.width.px]="ancho">
+<!-- Tambien lo podemos hacer con ngStyle -->
+<p [ngStyle]="estilo()">Esta clase es el valor del atributo angular</p>
+<button (click)="cambiarClase()">
+	cambiar de clase
 </button>
