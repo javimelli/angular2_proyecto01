@@ -1,0 +1,29 @@
+----------------------------------------------Plugins--------------------------------------------------
+Angular2 Eclipse creado por Angel Zerr
+Typescript creado por Angel Zerr
+------------------------------------------Crear Proyecto Angular2--------------------------------------
+Para crear un proyecto de Angular2 con angular-cli en eclipse simplemente hay que
+irse a new -> Angular2 -> Angular2 Project. Con esto se nos creará un proyecto inicial
+de Angular2 con su estructura y configuración. El múdulo y el componente principal de
+la aplicación. Estos archivos están dentro de la carpeta src/app
+
+> app.module.ts es el archivo que declara el módulo principal de la aplicación y registra
+	el componente principal de la misma.
+> app.component.ts Es el componente principal de la aplicación. Contiene la declaración
+	del mismo y su clase.
+> app.component.html Guarda el template del componente principal.
+> app.component.css Guarda la hoja de estilos que afecta al template de la aplicación.
+------------------------------------------Crear Nuevo Módulo------------------------------------------
+Para la creación de un nuevo módulo en la aplicación podemos hacerlo manualmente o con angular-cli.
+Con angular-cli es más sencillo. Abrimos la terminal y nos situamos en el directorio del proyecto.
+Ejecutamos el siguiente comando: ng g m nombreModulo
+Nos creará una carpeta nueva dentro del directorio src/app con los arcihivos de un componente. Para
+que el componente sea conocido debe estar declarado y exportado en el fichero que declara el modulo
+para poder ser importados en otros módulos.
+Para que este componente pueda ser consumido por un componente en un modulo padre debemos importar
+el nuevo modulo que exporta el componente en el modulo padre y añadirlo en el array de imports.
+Por último, podemos usarlo en el template del componente padre.
+Para poder usar el ngModel y más módulos debemos importarlos tambíen en el nuevo modulo creado como
+los siquientes BrowserModule, FormsModule y HttpModule
+ 
+

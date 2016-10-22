@@ -27,7 +27,11 @@ export class AppComponent {
   };
 //valor de width
   ancho:number = 20;
-
+//Formularios
+  text:string = 'Vacío';
+  checkbox:boolean = true;
+  radio:string = 'Gol';
+  
   setName(name:string){
       this.name = name;
   }
@@ -50,5 +54,9 @@ export class AppComponent {
       return {
           'color': this.redActive? 'red' : 'yellow'
       }
+  }
+  
+  updateCity(city:string){
+      console.log('Insertada la ciudad ' + city);
   }
 }

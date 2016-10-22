@@ -51,3 +51,23 @@
 <button (click)="cambiarClase()">
 	cambiar de clase
 </button>
+<!-- -------------------------------------------FORMULARIOS----------------------------------------------------- -->
+<p>{{text}}</p>
+<input type="text" [(ngModel)]="text">
+<p>{{checkbox}}</p>
+<input type="checkbox" [(ngModel)]="checkbox">
+<span *ngFor="let item of paises">
+	<input type="checkbox" [(ngModel)]="item.check">
+	<p>{{item.desc}}</p>
+</span>
+<!-- Para el radio button se enlaza con ngModel a un string con el valor del radiobutton correcto -->
+<p>{{radio}}</p>
+<input type="radio" [(ngModel)]="radio" value="Gol">Gol
+<input type="radio" [(ngModel)]="radio" value="Golazo">Golazo
+<input type="radio" [(ngModel)]="radio" value="Golazoo">Golazoo
+<!-- Se puede hacer referencia a elementos del template y utilizarlos de la siguiente manera -->
+<br>
+<input type="text" #cityInput>
+<button (click)="updateCity(cityInput.value); cityInput.value=''">Insertar ciudad</button>
+
+<app-ejecicio01>..Loading-ejercicio01</app-ejecicio01>

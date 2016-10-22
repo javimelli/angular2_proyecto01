@@ -1,0 +1,20 @@
+<h1>
+  A checklist
+</h1>
+
+<!-- Mostramos la lista de alimentos -->
+<ul>
+	
+	<li *ngFor="let item of alimentos">
+		<div [style.textDecoration]="item.check?'line-through':'none'">
+			<input type="checkbox" [(ngModel)]="item.check">
+			{{item.nombre}}
+			<button (click)="delete(item)">Delete</button>
+		</div>
+	</li>
+</ul>
+
+<hr>
+<!-- Formulario -->
+<input type="text" #inputAlimento> 
+<button (click)="add(inputAlimento.value)">Add</button>
